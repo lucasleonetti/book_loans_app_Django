@@ -1,4 +1,4 @@
-# Django App para la gestión de un sistema de prestamos de libros a clientes
+# Django App para la gestión de prestamos de libros a clientes
 
 ## Descripción del proyecto
 
