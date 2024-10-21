@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+<div class="container">
+  <h1 class="h1">Book Loans</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Book Name</th>
+        <th>Author</th>
+        <th>Loan Date</th>
+        <th>Return Date</th>
+        <th>Returned</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for book_loan in book_loans %}
+      <tr>
+        <td>{{ book_loan.book.name }}</td>
+        <td>{{ book_loan.book.author }}</td>
+        <td>{{ book_loan.loan_date }}</td>
+        <td>{{ book_loan.return_date }}</td>
+        <td>{{ book_loan.returned }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

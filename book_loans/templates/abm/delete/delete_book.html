@@ -1,0 +1,34 @@
+{% extends 'base.html' %} {% block contenidoDinamico %}
+
+<div class="d-flex justify-content-center align-items-center">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Confirmar Eliminación</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>¿Estás seguro que deseas eliminar este libro?</p>
+      </div>
+      <div class="modal-footer">
+        <form action="{% url 'delete_book' book.id %}" method="post">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger">Eliminar</button>
+        </form>
+        <a
+          href="{% url 'lista_libros' %}"
+          class="btn btn-secondary mx-2"
+          data-bs-dismiss="modal"
+          >Cancelar</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock contenidoDinamico %}

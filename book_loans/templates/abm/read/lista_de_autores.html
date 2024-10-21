@@ -1,0 +1,40 @@
+{% extends "base.html" %} {% block contenidoDinamico %}
+
+<div class="container-md">
+  <div class="row align-items-start">
+    <div class="col-6">
+      <h3 class="h3 mt-4">Lista de Autores</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Fecha de Nacimiento</th>
+            <th scope="col">Fecha De Defuncion</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for autor in autores %}
+          <tr>
+            <th scope="row">{{autor.id}}</th>
+            <td>{{autor.nombre}}</td>
+            <td>{{autor.apellido}}</td>
+            <td>{{autor.fecha_nacimiento}}</td>
+            <td>{{autor.fecha_defuncion}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="align-content-center text-center">
+    <a class="btn btn-secondary mb-4 mt-4" href="../">Volver a Inicio</a>
+    <a class="btn btn-primary mb-4 mt-4" href="{% url 'nuevo_autor' %}"
+      >Agregar Autor</a
+    >
+  </div>
+</div>
+
+{% endblock contenidoDinamico %}

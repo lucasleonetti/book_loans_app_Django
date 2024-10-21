@@ -1,0 +1,62 @@
+{% extends 'base.html' %} {% block contenidoDinamico %}
+<div class="d-flex flex-column">
+  <header class="masthead">
+    <div class="container position-relative">
+      <div class="row justify-content-center">
+        <div class="col-xl-6">
+          <div class="text-center text-white">
+            <!-- Page heading-->
+            <h1 class="h1 mb-5 animate__animated animate__fadeInDown">
+              Welcome to Book Loans Service!
+            </h1>
+            <!-- Subheading-->
+            <h2 class="h4 mb-5 animate__animated animate__fadeInDown">
+              Your one-stop solution for managing book loans efficiently
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="align-content-center text-center my-4">
+    <h3 class="h3">
+      Bienvenido a la página de inicio
+      <br />
+      <small class="text-body-secondary">
+        ¡Aquí podrá gestionar sus préstamos!</small
+      >
+    </h3>
+    <img src="{{url_avatar}}" alt="Avatar" class="img-thumbnail" />
+
+    <h4 class="h4 my-4">
+      {% if user.is_authenticated %}
+      ¡Hola, {{user.username}}!
+      <br />
+      {{mensaje}}
+      {% else %}
+      ¡Hola, visitante! Por favor inicie sesión para continuar.
+      {% endif %}
+  </div>
+
+  {% if user.is_authenticated %}
+  <div class="container align-content-center text-center mt-4 flex-grow-1">
+    <a class="btn btn-secondary mb-4 mx-2" href="{% url 'nuevo_prestamo' %}">
+      <i class="fas fa-book mx-2"></i> Nuevo Prestamo
+    </a>
+    <a class="btn btn-secondary mb-4 mx-2" href="{% url 'nuevo_cliente' %}">
+      <i class="fas fa-user-plus mx-2"></i> Registrar Cliente
+    </a>
+    <a class="btn btn-secondary mb-4 mx-2" href="{% url 'lista_prestamos' %}">
+      <i class="fas fa-list mx-2"></i> Lista De Prestamos
+    </a>
+    <a class="btn btn-secondary mb-4 mx-2" href="{% url 'lista_libros' %}">
+      <i class="fas fa-book-open mx-2"></i> Lista De Libros
+    </a>
+    <a class="btn btn-secondary mb-4 mx-2" href="{% url 'lista_autores' %}">
+      <i class="fas fa-pen-nib mx-2"></i> Lista De Autores
+    </a>
+  </div>
+  {% endif %}
+</div>
+{% endblock contenidoDinamico %}

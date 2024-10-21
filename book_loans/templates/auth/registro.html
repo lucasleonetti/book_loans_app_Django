@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block contenidoDinamico %}
+<div
+  class="d-flex justify-content-center align-items-center mx-auto col-4 m-auto"
+>
+  <form
+    method="post"
+    action="{% url 'registro' %}"
+    class="form-control form-floating my-6"
+  >
+    {% csrf_token %}
+    <h1 class="h3 mb-3 fw-normal">Registro de usuarios</h1>
+    <div class="form-group my-4 align-items-center">{{ formulario_login }}</div>
+    <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
+    {% if mensaje %}
+    <div class="alert alert-danger mt-4">{{ mensaje }}</div>
+    {% endif %}
+  </form>
+</div>
+{% endblock contenidoDinamico %}

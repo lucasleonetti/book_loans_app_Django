@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block contenidoDinámico %}
+
+
+<div class="col-6 align-center my-4 mx-auto">
+    <form action={% url "edit_user" %} method="post">
+        {% csrf_token %}
+
+        {{mensaje}}
+        
+        {{ formulario_edit_user }}
+
+        <button type="submit" class="btn btn-primary btn-block">Actualizar</button>
+    </form>
+
+    
+</div>
+
+{% endblock contenidoDinamico %}

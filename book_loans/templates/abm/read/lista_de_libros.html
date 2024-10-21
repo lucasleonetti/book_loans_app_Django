@@ -1,0 +1,51 @@
+{% extends "base.html" %} {% block contenidoDinamico %}
+
+<div class="container-md">
+  <div class="row align-items-start">
+    <div class="col-12">
+      <h3 class="h3 mt-4">Lista de Libros</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Titulo</th>
+            <th scope="col">Autor</th>
+            <th scope="col">Fecha de Publicacion</th>
+            <th scope="col">Numero de Paginas</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for libro in libros %}
+          <tr>
+            <th scope="row">{{libro.id}}</th>
+            <td>{{libro.titulo}}</td>
+            <td>{{libro.autor}}</td>
+            <td>{{libro.fecha_publicacion}}</td>
+            <td>{{libro.numero_paginas}}</td>
+            <td>
+              <a
+                class="btn btn-primary"
+                href="{% url 'editar_libro' libro.id %}"
+                >Editar</a
+              >
+              <a class="btn btn-danger" href="{% url 'delete_book' libro.id %}"
+                >Eliminar</a
+              >
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="text-center mt-4">
+    <a class="btn btn-secondary mb-4" href="../">Volver a Inicio</a>
+    <a class="btn btn-secondary mb-4" href="{% url 'nuevo_libro' %}"
+      >Agregar Libro</a
+    >
+  </div>
+</div>
+
+{% endblock contenidoDinamico %}

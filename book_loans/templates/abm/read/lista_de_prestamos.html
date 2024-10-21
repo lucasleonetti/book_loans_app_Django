@@ -1,0 +1,43 @@
+{% extends 'base.html' %} {% block contenidoDinamico %}
+
+<div class="container-md">
+  <div class="row align-items-start">
+    <div class="col-6">
+      <h3 class="h3 mt-4">Lista de Prestamos</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Libro</th>
+            <th scope="col">Nombre Cliente</th>
+            <th scope="col">Apellido Cliente</th>
+            <th scope="col">Fecha de Prestamo</th>
+            <th scope="col">Fecha de Devolucion</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for prestamo in prestamos %}
+          <tr>
+            <th scope="row">{{prestamo.id}}</th>
+            <td>{{prestamo.libro}}</td>
+            <td>{{prestamo.nombre_persona}}</td>
+            <td>{{prestamo.apellido_persona}}</td>
+            <td>{{prestamo.fecha_prestamo}}</td>
+            <td>{{prestamo.fecha_devolucion}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+  <div class="align-content-center text-center">
+    <a class="btn btn-secondary mb-4 mt-4" href="../">Volver a Inicio</a>
+    <a class="btn btn-primary mb-4 mt-4" href="{% url 'nuevo_cliente' %}">Registrar Cliente</a
+  </div>
+
+ 
+
+{% endblock contenidoDinamico %}

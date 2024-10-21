@@ -1,0 +1,12 @@
+{% extends "base.html" %} {% block contenidoDinamico %}
+
+<div class="container">
+  <h1 class="mt-4">Registrar Libro</h1>
+  <form method="POST">
+    {% csrf_token %} {{ nuevo_libro_form }}
+    <button type="submit" class="btn btn-primary my-4">Registrar</button>
+    <a class="btn btn-secondary my-4" href="../">Cancelar</a>
+  </form>
+</div>
+
+{% endblock contenidoDinamico %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block contenidoDinamico %}
+
+<div class="d-flex justify-content-center mx-auto col-4 m-auto">
+  <form
+    method="post"
+    action="{% url 'user_login' %}"
+    class="form-control my-2 form-floating"
+  >
+    {% csrf_token %}
+    <h1 class="h3 mb-3 fw-normal">Por favor inicia sesión</h1>
+    <div class="form-group my-4 align-items-center">{{ formulario_login }}</div>
+    {% if mensaje %} {{ mensaje }} {% endif %}
+    <button type="submit" class="btn btn-primary btn-block">Login</button>
+    <a class="btn btn-primary btn-block" href="{% url 'registro' %}"
+      >Registrarse</a
+    >
+  </form>
+</div>
+
+{% endblock contenidoDinamico %}
