@@ -53,3 +53,7 @@ Si por algun motivo ocurre algun error o no puede visualizar los datos ya cargad
 ```bash
 python manage.py migrate
 ```
+
+## Casos de prueba
+
+En el archivo 'casos_de_prueba.xlsx' se encuentran los casos de prueba realizados para la aplicación.
