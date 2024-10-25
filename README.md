@@ -25,7 +25,7 @@ Gestión de prestamos:
 - Clonar el repositorio
 
 ```bash
-git clone 
+git clone https://github.com/lucasleonetti/book_loans_app_Django.git
 ```
 
 - Instalar las dependencias
@@ -53,3 +53,7 @@ Si por algun motivo ocurre algun error o no puede visualizar los datos ya cargad
 ```bash
 python manage.py migrate
 ```
+
+## Casos de prueba
+
+En el archivo 'casos_de_prueba.xlsx' se encuentran los casos de prueba realizados para la aplicación.
